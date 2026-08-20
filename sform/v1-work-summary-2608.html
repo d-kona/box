@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>작업 내역 정리</title>
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --paper: #141414;
+    --ink: #ddd;
+    --ink-sub: #999;
+    --accent: #CE927B;
+    --accent-soft: #2e261c;
+    --border: #3a342c;
+    --border2: #777;
+    --table-head: #222;
+    --table-th: #888;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    padding:40px 16px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system, sans-serif;
+    line-height:1.6;
+  }
+  .sheet{
+    max-width: 980px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 48px 56px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+  h1{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+  .subtitle{
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border2);
+    color: var(--ink);
+  }
+  h2 .num{
+    display:inline-block;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .desc{
+    color: var(--ink-sub);
+    font-size: 15px;
+    margin: 10px 0 16px;
+  }
+  h3{
+    font-size: 18px;
+    margin: 36px 0 16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-color: var(--ink-sub);
+  }
+  table{
+    width:100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 15px;
+    table-layout: fixed;
+  }
+  thead th{
+    background: var(--table-head);
+    color: var(--table-th);
+    text-align:left;
+    font-weight: 700;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+  }
+  tbody td{
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink);
+    word-break: break-word;
+  }
+  code{
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  ul.plain{
+    margin: 4px 0;
+    padding-left: 18px;
+  }
+  ul.plain li{
+    margin: 3px 0;
+  }
+  .col-cat   { width: 20%; }
+  .col-path  { width: 32%; }
+  .col-note  { width: 48%; }
+  .col-menu  { width: 18%; }
+  .col-class { width: 18%; }
+  .col-files { width: 64%; }
+  .col-popup { width: 24%; }
+  .col-size  { width: 30%; }
+
+  footer{
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--ink-sub);
+    text-align: right;
+  }
+
+  @media print{
+    body{ background: var(--bg); padding:0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet{ border:none; box-shadow:none; border-radius:0; padding: 20px 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <h1>작업 내역 정리</h1>
+  <div class="subtitle">파일 추가/업데이트 및 JSP 수정사항 정리</div>
+
+  <!-- 1. 파일 추가 및 업데이트 -->
+  <h2>1. 파일 추가 및 업데이트</h2>
+  <div class="desc">해당 폴더 내 파일들이 추가 또는 수정된 항목입니다. (파일 수가 많아 폴더 단위로 정리)</div>
+  <table>
+    <colgroup><col class="col-cat"><col class="col-path"></colgroup>
+    <thead><tr><th>구분</th><th>경로</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">이미지 업로드<br>(추가 및 수정)</td><td><code>/img/common</code></td></tr>
+      <tr><td><code>/img/mypage</code></td></tr>
+      <tr><td><code>/m/img/doc</code></td></tr>
+      <tr><td><code>favicon.ico</code></td></tr>
+      <tr><td>폰트 업로드<br>(Pretendard 5종)</td><td><code>/font</code></td></tr>
+      <tr><td>스타일 추가/수정</td><td><code>/css</code></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 2. JSP 파일 수정사항 -->
+  <h2>2. JSP 파일 수정사항</h2>
+  <div class="desc">스타일 문서(css)를 제외하고, jsp 파일에서 직접 수정한 항목입니다.</div>
+
+  <h3>스타일 제거</h3>
+  <table>
+    <colgroup><col class="col-path" style="width:38%"><col class="col-note" style="width:62%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>/global/html_top.jsp</code></td>
+        <td>상단 head 내부에 있는 <code>&lt;style&gt;</code> 전체 제거 (.topTap 관련)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>.file_list 계산식 변경 및 클래스 추가</h3>
+
+  <p style="font-size:17px;margin:16px 0 6px;">▸ 마이에스폼</p>
+  <table>
+    <colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>/global/html_list.jsp</code><br>
+          <code>/global/html_list_cert.jsp</code><br>
+          <code>/global/html_list_nomeet.jsp</code>
+        </td>
+        <td>
+          <ul class="plain">
+            <li>ul 아래 계산식 제거 후 상단에 추가 (2608 file_list 계산식 변경)</li>
+            <li><code>.file-list</code>에 변수 style 추가</li>
+            <li>Total이 있는 div에 클래스 추가 (<code>sort_area</code>)</li>
+            <li><code>.sort_subject</code> 각 li에 클래스 추가 (<code>col-*</code>)</li>
+            <li><code>.list table</code> 각 col에 있는 사이즈 제거 및 클래스 추가 (<code>col-*</code>)</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:17px;margin:16px 0 6px;">▸ 통계</p>
+  <table>
+    <colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>/stats_manage/stats_list.jsp</code><br>
+          <code>/stats_manage/stats_manage.jsp</code>
+        </td>
+        <td>
+          <ul class="plain">
+            <li><code>.file-list</code>에 변수 style 추가</li>
+            <li><code>.sort_subject</code> 각 li에 클래스 추가 (<code>col-*</code>)</li>
+            <li><code>.list table</code> 각 col에 있는 사이즈 제거 및 클래스 추가 (<code>col-*</code>)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/stats_manage/stats_manage_use.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li><code>.sort_subject</code> 각 li에 클래스 추가 (<code>fix-col-*</code>)</li>
+            <li><code>.list table</code> 각 col에 있는 사이즈 제거 및 클래스 추가 (<code>fix-col-*</code>)</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:17px;margin:16px 0 6px;">▸ 등록</p>
+  <table>
+    <colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>/doc_manage/doc_manage.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li><code>table.bbs</code> width 수정</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:17px;margin:16px 0 6px;">▸ 설정</p>
+  <table>
+    <colgroup><col style="width:38%"><col style="width:62%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>/setup/corp_list.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li><code>.sort_subject</code> 각 li에 클래스 추가 (<code>col-*</code>)</li>
+            <li><code>.list table</code> 각 col에 있는 사이즈 제거 및 클래스 추가 (<code>col-*</code>)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/setup/group_list.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li><code>#setting_group2 .sort_subject</code> 각 li에 클래스 추가 (<code>col-*</code>)</li>
+            <li><code>#setting_group2 .list table</code> 각 col에 있는 사이즈 제거 및 클래스 추가 (<code>col-*</code>)</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>.contents에 각 페이지 클래스 추가</h3>
+  <table>
+    <colgroup><col class="col-menu"><col class="col-class"><col class="col-files"></colgroup>
+    <thead><tr><th>대메뉴</th><th>추가 클래스</th><th>대상 파일</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>마이에스폼</td>
+        <td><code>.my-sform</code></td>
+        <td>
+          <code>/global/html_list.jsp</code><br>
+          <code>/global/html_list_cert.jsp</code><br>
+          <code>/global/html_list_nomeet.jsp</code><br>
+          <code>/global/html_main.jsp</code>
+        </td>
+      </tr>
+      <tr>
+        <td>마이에스폼</td>
+        <td><code>.my-sform.view</code></td>
+        <td>
+          <code>/global/html_view.jsp</code><br>
+          <code>/global/html_view_cert.jsp</code><br>
+          <code>/global/html_view_nomeet.jsp</code><br>
+          <code>/global/html_view_temp.jsp</code><br>
+          <code>/global/html_view5.jsp</code><br>
+          <code>/global/html_view5_cert.jsp</code><br>
+          <code>/global/html_view5_nomeet.jsp</code>
+        </td>
+      </tr>
+      <tr>
+        <td>통계</td>
+        <td><code>.statistic</code></td>
+        <td>
+          <code>/stats_manage/stats_list.jsp</code><br>
+          <code>/stats_manage/stats_manage.jsp</code><br>
+          <code>/stats_manage/stats_manage_use.jsp</code>
+        </td>
+      </tr>
+      <tr>
+        <td>모니터링</td>
+        <td><code>.monitoring</code></td>
+        <td>
+          <code>/monitor_manage/monitor_list.jsp</code><br>
+          <code>/monitor_manage/monitor_manage.jsp</code>
+        </td>
+      </tr>
+      <tr>
+        <td>등록</td>
+        <td><code>.register</code></td>
+        <td><code>/doc_manage/doc_manage.jsp</code></td>
+      </tr>
+      <tr>
+        <td>설정</td>
+        <td><code>.set</code></td>
+        <td>
+          <code>/setup/corp_list.jsp</code><br>
+          <code>/setup/group_list.jsp</code><br>
+          <code>/setup/user_edit.jsp</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>팝업 사이즈 수정</h3>
+  <table>
+    <colgroup><col class="col-path" style="width:28%"><col class="col-popup"><col class="col-size" style="width:38%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>팝업명</th><th>사이즈</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>/doc_manage/doc_manage.jsp</code></td>
+        <td><code>doc_set_pop</code></td>
+        <td>width=520, height=800, top=180</td>
+      </tr>
+      <tr>
+        <td rowspan="3"><code>/setup/corp_list.jsp</code></td>
+        <td><code>corp_edit</code></td>
+        <td>width=400, height=710, top=180</td>
+      </tr>
+      <tr>
+        <td><code>corp_user_add</code></td>
+        <td>width=850, height=700, top=180</td>
+      </tr>
+      <tr>
+        <td><code>corp_user_edit</code></td>
+        <td>width=850, height=700, top=180</td>
+      </tr>
+      <tr>
+        <td rowspan="3"><code>/setup/group_list.jsp</code></td>
+        <td><code>group_add</code></td>
+        <td>width=290, height=190</td>
+      </tr>
+      <tr>
+        <td><code>group_group_edit</code></td>
+        <td>width=290, height=190</td>
+      </tr>
+      <tr>
+        <td><code>corp_user_edit</code></td>
+        <td>width=850, height=700, top=180</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>
