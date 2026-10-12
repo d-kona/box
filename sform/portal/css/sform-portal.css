@@ -996,7 +996,7 @@ footer .info-area li span:last-child {margin-right: 0;}
   }
   .content-area .main-content .sign-type .type-list li .li-desc {
     line-height: 24px;
-    letter-spacing: 0;
+    letter-spacing: -0.02em;
     font-size: 16px;
   }
   .content-area .main-content .sign-type .type-list .li-check {
