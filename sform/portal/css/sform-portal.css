@@ -755,13 +755,6 @@ footer .info-area li span:last-child {margin-right: 0;}
 
 /* 미디어쿼리 */
 @media (max-width: 768px) {
-  html:has(.wrap.main) {
-    min-height: 100%;
-    background: linear-gradient(to bottom, #ffffff 80%, #94A1D7 80%) no-repeat;
-    background-color: #94A1D7;
-  }
-  body:has(.wrap.main) {background-color: #fff;}
-
   /* -- 공통 -- */
   header {height: 60px}
   .header-in {
