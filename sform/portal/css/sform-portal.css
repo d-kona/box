@@ -755,6 +755,9 @@ footer .info-area li span:last-child {margin-right: 0;}
 
 /* 미디어쿼리 */
 @media (max-width: 768px) {
+  html:has(.wrap.main) {background-color: #94A1D7;}
+  body {background-color: #fff;}
+
   /* -- 공통 -- */
   header {height: 60px}
   .header-in {
