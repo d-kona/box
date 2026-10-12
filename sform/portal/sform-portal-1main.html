@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="Sform - 전자문서 통합 플랫폼">
+    <meta name="author" content="">
+    <title>Sform - 전자문서 통합 플랫폼</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
+    <!-- css -->
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/sform-portal.css">
+    <!-- js -->
+    <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script>
+        // header 스크롤
+        $(window).on('scroll', function () {
+            $('header').toggleClass('scrolled', $(this).scrollTop() > 0);
+        }).trigger('scroll');
+
+        // nav 모바일
+        $(function() {
+            $('.nav-mob').on('click', function() {
+                $('header').toggleClass('is-open');
+                $('body').css('overflow', $('header').hasClass('is-open') ? 'hidden' : '');
+            });
+        });
+
+        // main-visual 배너
+        $(function() {
+            const $banner = $('.banner-area.client');
+            const $originalUl = $banner.find('ul');
+            
+            if ($originalUl.length) {
+                const $cloneUl = $originalUl.clone().attr('aria-hidden', 'true');
+                $banner.append($cloneUl);
+            }
+        });
+
+        // client-list 고객사 배너
+        $(function() {
+            const $clientSection = $('.content-area .main-content .client');
+            const $tabBtns = $clientSection.find('.btn-mob .btn-type');
+            const $cardLists = $clientSection.find('.client-list .type-list');
+
+            $tabBtns.eq(0).addClass('active');
+            $cardLists.eq(0).addClass('active');
+
+            $tabBtns.on('click', function() {
+                const targetIdx = $(this).index();
+
+                $tabBtns.removeClass('active');
+                $(this).addClass('active');
+
+                $cardLists.removeClass('active');
+                $cardLists.eq(targetIdx).addClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap main">
+    <header>
+        <div class="header-in">
+            <div class="logo-area">
+                <a href=""><img src="./images/logo-sform.svg" alt="에스폼 로고"/></a>
+            </div>
+            <nav>
+                <div class="nav-mob">
+                    <span class="ico-nav-menu"></span>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="">주요기능</a></li>
+                        <li><a href="">이용방식</a></li>
+                        <li><a href="">서명수단</a></li>
+                        <li><a href="">주요고객</a></li>
+                        <li><a href="">가맹계약</a></li>
+                    </ul>
+                </div>
+                <ul class="nav-link">
+                    <li><a href="" class="btn-login">로그인</a></li>
+                    <li><a href="" class="btn-start">도입문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content-area">
+        <section class="main-visual">
+            <div class="main-visual-in">
+                <div class="img-area">
+                    <img src="./images/main-visual.png" alt="에스폼 메인 비주얼 이미지" draggable="false"/>
+                </div>
+                <div class="desc-area">
+                    <h1>전자문서 통합 플랫폼</h1>
+                    <h2>
+                        <span class="line"><span>종이 없이, 더 빠르게</span></span>
+                        <span class="line line-2"><span>전자문서 플랫폼 에스폼</span></span>
+                    </h2>
+                    <p>작성 ∙ 서명 ∙ 보관을 한 곳에서<br/>계약을 넘어 모든 문서 업무의 디지털 전환</p>
+                </div>
+            </div>
+            <div class="banner-area client">
+                <ul>
+                    <li><img src="./images/client/logo-dopco.png" alt="고객사-대한송유관공사"/></li>
+                    <li><img src="./images/client/logo-kintex.png" alt="고객사-킨텍스"/></li>
+                    <li><img src="./images/client/logo-pulmuone.png" alt="고객사-풀무원"/></li>
+                    <li><img src="./images/client/logo-megacoffee.png" alt="고객사-메가커피"/></li>
+                    <li><img src="./images/client/logo-asung-daiso.png" alt="고객사-아성다이소"/></li>
+                    <li><img src="./images/client/logo-dhgas.png" alt="고객사-대화도시가스(주)"/></li>
+                    <li><img src="./images/client/logo-kyobo-iprovest.png" alt="고객사-교보증권"/></li>
+                    <li><img src="./images/client/logo-hyundai-rentalcare.png" alt="고객사-현대렌탈케어"/></li>
+                    <li><img src="./images/client/logo-platpharm.png" alt="고객사-플랫팜"/></li>
+                    <li><img src="./images/client/logo-sk-speedmate.png" alt="고객사-SK스피드메이트"/></li>
+                    <li><img src="./images/client/logo-moguchon.png" alt="고객사-농협목우촌"/></li>
+                    <li><img src="./images/client/logo-aj-ict.png" alt="고객사-AJ ICT"/></li>
+                </ul>
+            </div>
+        </section>
+        <section class="main-content">
+            <div class="main-content-in">
+                <div class="section-box service-type">
+                    <div class="title-area">
+                        <h3>이용 방식</h3>
+                        <p>기업 환경에 맞춰 4가지 방식으로 도입할 수 있습니다.</p>
+                    </div>
+                    <div class="service-type-list">
+                        <ul class="legend-list">
+                            <li>데이터 내부 보관</li>
+                            <li class="cloud">데이터 외부(클라우드) 보관</li>
+                        </ul>
+                        <ul class="type-list">
+                            <li>
+                                <span class="legend">내부 보관</span>
+                                <h4>구축형<span>(On-Premise)</span></h4>
+                                <div class="img-area"><img src="./images/service-type-1.png" alt="구축형 타입 설명 이미지" draggable="false"/></div>
+                                <p>기업 인프라 내 직접 설치해<br/>독립 환경에서 운영</p>
+                            </li>
+                            <li>
+                                <span class="legend">내부 보관</span>
+                                <h4>렌탈형<span>(On-Premise)</span></h4>
+                                <div class="img-area"><img src="./images/service-type-2.png" alt="렌탈형 타입 설명 이미지" draggable="false"/></div>
+                                <p>설치형을 구독 방식으로<br/>이용, 초기 비용 부담 완화</p>
+                            </li>
+                            <li>
+                                <span class="legend cloud">외부 보관</span>
+                                <h4>API<span>연동형</span></h4>
+                                <div class="img-area"><img src="./images/service-type-3.png" alt="API 연동형 타입 설명 이미지" draggable="false"/></div>
+                                <p>내부 시스템과 연동해<br/>프로세스 운영</p>
+                            </li>
+                            <li>
+                                <span class="legend cloud">외부 보관</span>
+                                <h4>SaaS<span>서비스 이용</span></h4>
+                                <div class="img-area"><img src="./images/service-type-4.png" alt="SaaS 서비스 타입 설명 이미지" draggable="false"/></div>
+                                <p>설치 없이 로그인만으로<br/>바로 이용</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-area">
+                        <a href="" class="btn-detail">자세히보기</a>
+                    </div>
+                </div>
+                <div class="section-box sign-type">
+                    <div class="title-area">
+                        <h3>서명 수단</h3>
+                        <p>문서 성격에 맞는 서명 방식을 선택적으로 사용하세요.</p>
+                    </div>
+                    <div class="sign-type-list">
+                        <ul class="type-list">
+                            <li class="type-1">
+                                <span class="li-badge">강력한 본인확인 · 높은 법적 신뢰</span>
+                                <h4>공동인증서 서명</h4>
+                                <div class="li-desc">
+                                    <p>공동인증서(구 공인인증서)로 서명을 진행합니다.</p>
+                                    <p>법적 분쟁이 생길 수 있는 중요한 거래에 적합합니다.</p>
+                                </div>
+                                <ul class="li-check">
+                                    <li>엄격한 실명 · 본인 확인</li>
+                                    <li>높은 부인 방지 · 증빙 효력</li>
+                                    <li>범용 · 용도 제한용 인증서</li>
+                                </ul>
+                            </li>
+                            <li class="type-2">
+                                <span class="li-badge">사인 · 인감도장 등 빠른 서명</span>
+                                <h4>간편 서명</h4>
+                                <div class="li-desc">
+                                    <p>직접 서명(사인)을 그리거나 등록한 인감도장 이미지를 날인합니다. 분쟁 소지가 적고 편의성을 추구하는 거래에 활용합니다.</p>
+                                </div>
+                                <ul class="li-check">
+                                    <li>손글씨 사인 직접 입력</li>
+                                    <li>인감 · 도장 이미지 날인</li>
+                                    <li>인증서 없이 즉시 서명</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="add-notice">
+                            <p class="title">유연한 서명 정책</p>
+                            <p>공동인증서와 간편서명을 문서 성격에 맞게 선택해 사용할 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <a href="" class="btn-detail">자세히보기</a>
+                    </div>
+                </div>
+                <div class="section-box client">
+                    <div class="title-area">
+                        <h3>이용 방식별 주요 고객사</h3>
+                        <p>도입 방식별 대표 레퍼런스를 확인하세요.</p>
+                    </div>
+                    <div class="btn-mob">
+                        <span class="btn-type type-1">구축형</span>
+                        <span class="btn-type type-2">렌탈형</span>
+                        <span class="btn-type type-3">API 연동형</span>
+                        <span class="btn-type type-4">SaaS</span>
+                    </div>
+                    <div class="client-list">
+                        <div class="type-list type-1">
+                            <div class="list-title">
+                                <h4>구축형</h4>
+                                <p>데이터 내부 보관</p>
+                            </div>
+                            <ul>
+                                <li><img src="./images/client/logo-dopco.png" alt="고객사-대한송유관공사"/></li>
+                                <li><img src="./images/client/logo-kintex.png" alt="고객사-킨텍스"/></li>
+                                <li><img src="./images/client/logo-pulmuone.png" alt="고객사-풀무원"></li>
+                            </ul>
+                        </div>
+                        <div class="type-list type-2">
+                            <div class="list-title">
+                                <h4>렌탈형</h4>
+                                <p>데이터 내부 보관</p>
+                            </div>
+                            <ul>
+                                <li><img src="./images/client/logo-megacoffee.png" alt="고객사-메가커피"/></li>
+                                <li><img src="./images/client/logo-asung-daiso.png" alt="고객사-아성다이소"/></li>
+                                <li><img src="./images/client/logo-dhgas.png" alt="고객사-대화도시가스(주)"/></li>
+                            </ul>
+                        </div>
+                        <div class="type-list type-3">
+                            <div class="list-title">
+                                <h4>API 연동형</h4>
+                                <p>데이터 외부 보관</p>
+                            </div>
+                            <ul>
+                                <li><img src="./images/client/logo-kyobo-iprovest.png" alt="고객사-교보증권"/></li>
+                                <li><img src="./images/client/logo-hyundai-rentalcare.png" alt="고객사-현대렌탈케어"/></li>
+                                <li><img src="./images/client/logo-platpharm.png" alt="고객사-플랫팜"/></li>
+                            </ul>
+                        </div>
+                        <div class="type-list type-4">
+                            <div class="list-title">
+                                <h4>SaaS</h4>
+                                <p>데이터 외부 보관</p>
+                            </div>
+                            <ul>
+                                <li><img src="./images/client/logo-sk-speedmate.png" alt="고객사-SK스피드메이트"/></li>
+                                <li><img src="./images/client/logo-moguchon.png" alt="고객사-농협목우촌"/></li>
+                                <li><img src="./images/client/logo-aj-ict.png" alt="고객사-AJ ICT"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn-area">
+                        <a href="" class="btn-detail">자세히보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-in">
+            <ul class="link-area">
+                <li><a href="">이용약관</a></li>
+                <li><a class="point" href="">개인정보처리방침</a></li>
+            </ul>
+            <ul class="info-area">
+                <li class="comp-name">주식회사 유니포스트</li>
+                <li><span>주소 : 서울시 강남구 강남대로 574, 5층 (전기공사공제조합회관)</span><span>대표 : 김계원</span></li>
+                <li><span>사업자등록번호 : 104-86-21562</span><span>통신판매번호 : 2020-서울강남-00515</span></li>
+                <li>ⓒUNIPOST. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
