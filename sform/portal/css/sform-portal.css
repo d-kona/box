@@ -999,6 +999,11 @@ footer .info-area li span:last-child {margin-right: 0;}
     letter-spacing: -0.02em;
     font-size: 16px;
   }
+  .content-area .main-content .sign-type .type-list li .li-desc p {
+    display: inline;
+    margin-right: 4px;
+  }
+  .content-area .main-content .sign-type .type-list li .li-desc p:last-child {margin-right: 0;}
   .content-area .main-content .sign-type .type-list .li-check {
     gap: 10px;
     position: initial;
