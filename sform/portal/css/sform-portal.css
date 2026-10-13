@@ -962,6 +962,10 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
     padding: 80px 24px;
     border-radius: 24px;
   }
+  .content-area .main-visual {
+    height: 750px;
+    padding-top: 140px;
+  }
   .content-area .main-visual .desc-area h2 {
     margin: 0;
     line-height: 1.3;
