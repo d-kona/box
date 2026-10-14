@@ -1187,6 +1187,7 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
     font-size: 20px;
   }
   .wrap.contact-page footer .slogan-area p {min-height: 32px;}
+  .wrap.contact-page .contact-area .btn-area .btn-submit:hover {background-color: transparent;}
   .wrap.contact-page .contact-area .toast-msg-area .toast-msg {
     top: calc(100% - 122px);
     transform: translateX(-50%);
