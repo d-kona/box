@@ -14,19 +14,6 @@
     <script src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script>
-        // header 스크롤
-        $(window).on('scroll', function () {
-            $('header').toggleClass('scrolled', $(this).scrollTop() > 0);
-        }).trigger('scroll');
-
-        // nav 모바일
-        $(function() {
-            $('.nav-mob').on('click', function() {
-                $('header').toggleClass('is-open');
-                $('body').css('overflow', $('header').hasClass('is-open') ? 'hidden' : '');
-            });
-        });
-
         // 슬로건 타이핑
         $(function() {
             const $pList = $('.slogan-area p');
