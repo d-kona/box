@@ -995,7 +995,6 @@ html:has(.wrap.login-page) {background-color: rgba(var(--c-sub-rgb),1);}
 }
 
 /* 아이디/비번찾기 */
-.wrap.login-page .login-page-in {min-height: 600px;}
 .wrap.login-page:has(.login-area.find-info.on) .login-page-in {width: auto;}
 .wrap.login-page .login-area.find-info {
   gap: 28px;
@@ -1475,6 +1474,10 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 
 /* 미디어쿼리 */
 /* 추가 */
+@media (max-height: 480px) {
+  /* -- 로그인 -- */
+  .wrap.login-page .login-page-in {padding: 48px 0;}
+}
 @media (max-width: 1279px) {
   /* -- 로그인 -- */
   .wrap.login-page header {
