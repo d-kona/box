@@ -82,10 +82,7 @@ time, mark, audio, video {
   print-color-adjust:exact;
 }
 dl, ul, ol, nav, li {list-style:none;}
-img {
-  border: 0;
-  vertical-align: middle;
-}
+label {font-weight: normal;}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -141,6 +138,8 @@ textarea:focus {
   outline: none;
 }
 img {
+  vertical-align: middle;
+  border: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -765,6 +764,318 @@ footer .info-area li span:last-child {margin-right: 0;}
 }
 
 
+/* -- 로그인 -- */
+html:has(.wrap.login-page) {background-color: rgba(var(--c-sub-rgb),1);}
+.wrap.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh;
+}
+.wrap.login-page::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/bg-login-page.png') 0 0 no-repeat;
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.wrap.login-page .login-page-in {width: min(100%, 460px);}
+.wrap.login-page header {
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: calc(100% - 160px);
+  height: auto;
+  border: 0;
+  background-color: transparent;
+  backdrop-filter: none;
+}
+.wrap.login-page header .header-in {
+  max-width: none;
+  height: auto;
+  padding: 0;
+}
+.wrap.login-page header .language-selector {margin-left: auto;}
+.wrap.login-page header .language-selector .select-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.wrap.login-page header .language-selector .select-area::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 12px;
+  height: 8px;
+  background: url('../images/ico-arrow-w.svg') 0 0 no-repeat;
+  background-size: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.wrap.login-page header .language-selector .select-area select {
+  width: 100%;
+  height: 100%;
+  padding: 0 48px 0 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+.wrap.login-page footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrap.login-page footer .footer-in {
+  gap: 40px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.wrap.login-page footer .info-area {
+  line-height: 1;
+  letter-spacing: 0.02em;
+  opacity: .4;
+}
+.wrap.login-page .content-area {
+  margin: 0;
+  padding: 0;
+}
+.wrap.login-page .login-area {
+  display: none;
+  flex-direction: column;
+  gap: 44px;
+  position: relative;
+  padding: 80px 56px 60px;
+  border-radius: 28px;
+  background-color: #fff;
+  box-sizing: border-box;
+  opacity: 0; 
+  transition: opacity .15s cubic-bezier(0.74,0.82,0,1.45);
+}
+.wrap.login-page .login-area.on {display: flex;}
+.wrap.login-page .login-area.fade-in {opacity: 1;}
+.wrap.login-page .login-area .login-area-in {position: relative;}
+.wrap.login-page .login-area h2 {
+  text-align: center;
+  line-height: 1;
+  font-family: "Pretendard-ExtraBold";
+  font-size: 36px;
+}
+.wrap.login-page .login-area .form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.wrap.login-page .login-area .form-area dl dt {display: none;}
+.wrap.login-page .login-area .form-area dl dd {position: relative;}
+.wrap.login-page .login-area .form-area dl dd input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 18px;
+  border: 1px solid rgba(var(--c-sub-rgb),.2);
+  border-radius: 8px;
+}
+.wrap.login-page .login-area .form-area .pw-area dd input {padding-right: 40px;}
+.wrap.login-page .login-area .form-area .pw-area .btn-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.wrap.login-page .login-area .form-area .pw-area .btn-toggle::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: url('../images/ico-eye1-close.svg') 50% calc(50% + 1px) no-repeat;
+  background-size: 21px;
+}
+.wrap.login-page .login-area .form-area .pw-area.open .btn-toggle::before {
+  background: url('../images/ico-eye1-open.svg') 50% 50% no-repeat;
+  background-size: 23px;
+}
+.wrap.login-page .login-area .form-area .checkbox-area {margin-top: 8px;}
+.wrap.login-page .login-area .form-area .checkbox-area input[type=checkbox] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  border: 0;
+}
+.wrap.login-page .login-area .form-area .checkbox-area input[type=checkbox] + .check-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  cursor: pointer;
+}
+.wrap.login-page .login-area .form-area .checkbox-area input[type=checkbox] + .check-label::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 2px solid rgba(var(--c-sub-rgb),.1);
+  border-radius: 4px;
+}
+.wrap.login-page .login-area .form-area .checkbox-area input[type=checkbox]:checked + .check-label::before {border-color: #222;}
+.wrap.login-page .login-area .form-area .checkbox-area input[type=checkbox]:checked + .check-label::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 12px;
+  height: 9px;
+  background: url('../images/ico-check.svg') no-repeat 0 0;
+  background-size: 100%;
+}
+.wrap.login-page .login-area .btn-area:has(.btn-login) {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+.wrap.login-page .login-area .btn-area:has(.btn-login) button {
+  height: 60px;
+  color: #fff;
+  border: 1px solid rgba(var(--c-main-rgb),.2);
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+.wrap.login-page .login-area .btn-area .btn-login {
+  flex: 1;
+  font-family: "Pretendard-SemiBold";
+  font-size: 22px;
+  background-color: rgba(var(--c-main-rgb),1);
+  transition: all .4s ease;
+}
+.wrap.login-page .login-area .btn-area .btn-login:hover {
+  border-color: rgba(var(--c-sub-rgb),1);
+  background-color: rgba(var(--c-sub-rgb),1);
+}
+.wrap.login-page .login-area .btn-area .btn-login-google {
+  flex: 0 0 60px;
+  font-size: 0 !important;
+  color: transparent !important;
+  border-color: rgba(var(--c-sub-rgb),.2);
+  background: url('../images/logo-google.svg') 50% 50% no-repeat;
+  background-size: 28px;
+}
+.wrap.login-page .login-area .btn-area .btn-login-google:hover {border-color: rgba(var(--c-sub-rgb),.6);}
+.wrap.login-page .login-area .btn-link.section-change {
+  margin-top: 36px;
+  padding-top: 20px;
+  text-align: right;
+  border-top: 1px solid rgba(var(--c-sub-rgb),.1);
+}
+.wrap.login-page .login-area .btn-link.section-change a {
+  display: inline-block;
+  color: #222;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* 아이디/비번찾기 */
+.wrap.login-page:has(.login-area.find-info.on) .login-page-in {width: auto;}
+.wrap.login-page .login-area.find-info {
+  gap: 28px;
+  padding-bottom: 40px;
+}
+.wrap.login-page .login-area.find-info .tab-btn-area {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.wrap.login-page .login-area.find-info .tab-btn-area span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 44px;
+  margin: 0;
+  padding: 0 20px;
+  font-family: "Pretendard-SemiBold";
+  font-size: 18px;
+  color: rgba(var(--c-sub-rgb),1);
+  border-radius: 16px;
+  background-color: rgba(var(--c-sub-rgb),.06);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.wrap.login-page .login-area.find-info .tab-btn-area span.on {
+  color: #fff;
+  background-color: rgba(var(--c-sub-rgb),1);
+}
+.wrap.login-page .login-area.find-info .find-info-in {
+  display: flex;
+  gap: 120px;
+  position: relative;
+}
+.wrap.login-page .login-area.find-info .find-info-in::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid rgba(var(--c-sub-rgb),.1);
+}
+.wrap.login-page .login-area.find-info .add-desc {
+  margin: 20px 0 36px;
+  line-height: 26px;
+}
+.wrap.login-page .login-area.find-info .find-id,
+.wrap.login-page .login-area.find-info .find-pw {
+  display: block;
+  width: 324px;
+}
+.wrap.login-page .login-area .btn-area:has(.btn-find) {
+  display: flex;
+  margin-top: 28px;
+}
+.wrap.login-page .login-area .btn-area:has(.btn-find) button {
+  height: 60px;
+  color: #fff;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+.wrap.login-page .login-area .btn-area .btn-find {
+  flex: 1;
+  font-family: "Pretendard-SemiBold";
+  font-size: 22px;
+  background-color: rgba(var(--c-main-rgb),1);
+  transition: all .4s ease;
+}
+.wrap.login-page .login-area .btn-area .btn-find:hover {background-color: rgba(var(--c-sub-rgb),1);}
+.wrap.login-page .login-area.find-info .btn-link.section-change {
+  margin-top: 0;
+  padding-top: 0;
+  border: 0;
+}
+
+
 /* -- 도입문의 -- */
 html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 .wrap.contact-page {
@@ -1065,7 +1376,6 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   background: url('../images/ico-check-w.svg') no-repeat 0 0;
   background-size: 100%;
 }
-.wrap.contact-page .contact-area .agree-area .checkbox-area label {font-weight: normal;}
 .wrap.contact-page .contact-area .g-recaptcha {margin-top: 40px;}
 .wrap.contact-page .contact-area .btn-area:has(.btn-submit) {
   position: absolute;
@@ -1165,6 +1475,13 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 /* 미디어쿼리 */
 /* 추가 */
 @media (max-width: 1279px) {
+  /* -- 로그인 -- */
+  .wrap.login-page header {
+    top: 48px;
+    left: 48px;
+    width: calc(100% - 96px);
+  }
+  
   /* -- 도입문의 -- */
   .wrap.contact-page header,
   .wrap.contact-page footer {
@@ -1388,9 +1705,24 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
     padding: 0 40px;
   }
   .content-area .main-content .client .client-list .type-list {width: 40%;}
+
+  /* -- 로그인 -- */
+  .wrap.login-page .login-area.find-info {padding-top: 125px;}
+  .wrap.login-page .login-area.find-info .tab-btn-area {
+    display: flex;
+    gap: 12px;
+  }
+  .wrap.login-page .login-area.find-info .find-id,
+  .wrap.login-page .login-area.find-info .find-pw {
+    display: none;
+  }
+  .wrap.login-page .login-area.find-info .find-id.on,
+  .wrap.login-page .login-area.find-info .find-pw.on {
+    display: block;
+  }
 }
 /* 모바일 */
-@media (max-width: 767px) {  
+@media (max-width: 767px) {
   /* -- 메인 -- */
   .content-area .main-content .main-content-in {gap: 24px;}
   .content-area .main-visual {
@@ -1576,14 +1908,69 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
     font-size: 16px;
   }
   footer .info-area .comp-name {font-size: 16px;}
-  
+
+  /* -- 로그인 -- */
+  .wrap.login-page {align-items: flex-start;}
+  .wrap.login-page::before {
+    background: url(../images/bg-login-page.png) calc(100% + 30vw) 12vh no-repeat;
+    background-size: cover;
+  }
+  .wrap.login-page header,
+  .wrap.login-page footer {
+    position: initial;
+    width: 100%;
+    height: auto;
+  }
+  .wrap.login-page header .header-in {padding: 18px 24px 0;}
+  .wrap.login-page footer {
+    margin: 40px 0;
+    text-align: center;
+    transform: none;
+  }
+  .wrap.login-page .login-area {
+    gap: 36px;
+    margin: 40px 20px 0;
+    padding: 52px 24px 40px;
+    border-radius: 16px;
+  }
+  .wrap.login-page .login-area h2 {font-size: clamp(26px, 8vw, 30px);}
+  .wrap.login-page .login-area .form-area dl dd input {
+    height: 44px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+  .wrap.login-page .login-area .btn-area:has(.btn-login) button,
+  .wrap.login-page .login-area .btn-area:has(.btn-find) button {
+    height: 54px;
+    font-size: 21px;
+  }
+  .wrap.login-page .login-area .btn-area .btn-login:hover {
+    border-color: rgba(var(--c-main-rgb),.2);
+    background-color: rgba(var(--c-main-rgb),1);
+  }
+  .wrap.login-page .login-area .btn-area .btn-login-google:hover {border-color: rgba(var(--c-sub-rgb),.2);}
+  .wrap.login-page .login-area .btn-area .btn-find:hover {background-color: rgba(var(--c-main-rgb), 1);}
+  .wrap.login-page .login-area.find-info {padding-top: 110px;}
+  .wrap.login-page .login-area.find-info .tab-btn-area span {
+    height: 40px;
+    font-size: 16px;
+  }
+  .wrap.login-page .login-area.find-info .add-desc {
+    margin: 20px 0;
+    line-height: 24px;
+  }
+  .wrap.login-page .login-area.find-info .find-id.on,
+  .wrap.login-page .login-area.find-info .find-pw.on {
+    width: auto;
+  }
+
   /* -- 도입문의 -- */
   .wrap.contact-page header .header-in {padding: 24px 24px 0;}
   .wrap.contact-page footer .footer-in {padding: 24px 24px 40px}
   .wrap.contact-page .contact-area {
     gap: 28px;
     padding: 48px 24px;
-    border-radius: 12px;
+    border-radius: 16px;
   }
   .wrap.contact-page .contact-area h2 {font-size: clamp(26px, 8vw, 30px);}
   .wrap.contact-page .contact-area .form-area {gap: 28px;}
