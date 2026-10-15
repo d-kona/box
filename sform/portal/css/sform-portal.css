@@ -995,6 +995,7 @@ html:has(.wrap.login-page) {background-color: rgba(var(--c-sub-rgb),1);}
 }
 
 /* 아이디/비번찾기 */
+.wrap.login-page .login-page-in {min-height: 600px;}
 .wrap.login-page:has(.login-area.find-info.on) .login-page-in {width: auto;}
 .wrap.login-page .login-area.find-info {
   gap: 28px;
