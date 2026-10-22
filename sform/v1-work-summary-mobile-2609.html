@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>작업 내역 정리</title>
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --paper: #141414;
+    --ink: #ddd;
+    --ink-sub: #999;
+    --accent: #CE927B;
+    --accent-soft: #2e261c;
+    --border: #3a342c;
+    --border2: #777;
+    --table-head: #222;
+    --table-th: #888;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    padding:40px 16px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system, sans-serif;
+    line-height:1.6;
+  }
+  .sheet{
+    max-width: 980px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 48px 56px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+  h1{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+  .subtitle{
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border2);
+    color: var(--ink);
+  }
+  h2 .num{
+    display:inline-block;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .desc{
+    color: var(--ink-sub);
+    font-size: 15px;
+    margin: 10px 0 16px;
+  }
+  h3{
+    font-size: 18px;
+    margin: 36px 0 16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-color: var(--ink-sub);
+  }
+  table{
+    width:100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 15px;
+    table-layout: fixed;
+  }
+  thead th{
+    background: var(--table-head);
+    color: var(--table-th);
+    text-align:left;
+    font-weight: 700;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+  }
+  tbody td{
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--ink);
+    word-break: break-word;
+  }
+  code{
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  ul.plain{
+    margin: 4px 0;
+    padding-left: 18px;
+  }
+  ul.plain li{
+    margin: 3px 0;
+  }
+  .col-cat   { width: 20%; }
+  .col-path  { width: 32%; }
+  .col-note  { width: 48%; }
+  .col-menu  { width: 18%; }
+  .col-class { width: 18%; }
+  .col-files { width: 64%; }
+  .col-popup { width: 24%; }
+  .col-size  { width: 30%; }
+
+  footer{
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--ink-sub);
+    text-align: right;
+  }
+
+  @media print{
+    body{ background: var(--bg); padding:0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sheet{ border:none; box-shadow:none; border-radius:0; padding: 20px 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <h1>V1 모바일 : 작업 내역 정리</h1>
+  <div class="subtitle">파일 추가/업데이트 및 JSP 수정사항 정리</div>
+
+  <!-- 1. 파일 추가 및 업데이트 -->
+  <h2>1. 파일 추가 및 업데이트</h2>
+  <div class="desc">해당 폴더 내 파일들이 추가 또는 수정된 항목입니다.</div>
+  <table>
+    <colgroup><col class="col-cat"><col class="col-path"></colgroup>
+    <thead><tr><th>구분</th><th>경로</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">이미지 업로드<br>(추가 및 수정)</td><td><code>/mobile/img</code></td></tr>
+      <tr><td><code>/m/img</code></td></tr>
+      <tr><td><code>/img/member</code></td></tr>
+      <!-- 적용되어 있음 -->
+      <!-- <tr><td>폰트 업로드<br>(Pretendard 5종)</td><td><code>/font</code></td></tr> -->
+      <tr><td rowspan="2">스타일 추가/수정</td><td><code>/mobile/css</code></td></tr>
+      <tr><td><code>/css/mypage.css</code> 웹 추가 수정</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 2. JSP 파일 수정사항 -->
+  <h2>2. JSP 파일 수정사항</h2>
+  <div class="desc">jsp 파일에서 직접 수정한 항목입니다.</div>
+
+  <!-- <h3>.file_list 계산식 변경 및 클래스 추가</h3> -->
+  <!-- <p style="font-size:17px;margin:24px 0 6px;">▸ 목록</p> -->
+  <table>
+    <colgroup><col style="width:40%"><col style="width:60%"></colgroup>
+    <thead><tr><th>파일 경로</th><th>작업 내용</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>/mobile/global/html_list_nomeet.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li>L:699, L:711 <code>td colspan</code> 5 → 6으로 수정<br/>(자동 계산이 되어야 하는 경우라면 수정이 필요해 보임)</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/mobile/global/comment_pop.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li>L:39 <code>&lt;style&gt;</code> 추가 및 수정</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/mobile/global/html_list.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li>L:257 <code>&lt;style&gt;</code> 추가 및 수정</li>
+            <li>L:693 <code>#all_popup</code> 내부 태그 사이즈 수정</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/mobile/global/popup_renew.jsp</code></td>
+        <td>
+          <ul class="plain">
+            <li>L:70 <code>&lt;style&gt;</code> 추가 및 수정</li>
+            <li>L:173 <code>table width</code> 90% → 100%로 수정</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>
