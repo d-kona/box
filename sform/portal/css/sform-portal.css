@@ -2470,6 +2470,101 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 .wrap.sub .sub-content-area .btn-m.ico:hover::before {transform: translateY(-50%) translateX(3px);}
 
 
+/* -- 정책 페이지 -- */
+/* 이용약관/개인정보처리방침 */
+.wrap.sub.policy .sub-content-area.intro {padding-bottom: 100px;}
+.sub.policy .policy-area {
+  max-width: 1000px;
+  margin: 68px auto 0;
+  padding-bottom: 40px;
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  font-size: 17px;
+  border-bottom: 2px solid #222;
+}
+.sub.policy .policy-area .policy-header {
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #222;
+}
+.sub.policy .policy-area .policy-header h2 {
+  margin: 0 0 8px 0;
+  font-family: 'Pretendard-Bold';
+  font-size: 28px;
+}
+.sub.policy .policy-area .policy-header .policy-effective-date {
+  margin: 0;
+  font-size: 15px;
+}
+.sub.policy .policy-area .policy-section {margin-bottom: 40px;}
+.sub.policy .policy-area .policy-section h3 {
+  margin: 0 0 20px 0;
+  padding-bottom: 4px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  font-family: 'Pretendard-Bold';
+  font-size: 22px;
+}
+.sub.policy .policy-area .policy-article {margin-bottom: 25px;}
+.sub.policy .policy-area .policy-article h4 {
+  margin: 0 0 10px 0;
+  font-family: 'Pretendard-Bold';
+}
+.sub.policy .policy-area .policy-article p {margin: 0;}
+.sub.policy .policy-area .list-num {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+  counter-reset: policy-counter;
+}
+.sub.policy .policy-area .list-num > li {
+  position: relative;
+  margin-bottom: 4px;
+  padding-left: 20px;
+}
+.sub.policy .policy-area .list-num > li:last-child {margin-bottom: 0;}
+.sub.policy .policy-area .list-num > li::before {
+  counter-increment: policy-counter;
+  content: counter(policy-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sub.policy .policy-area .list-bullet {
+  margin: 4px 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+.sub.policy .policy-area .list-bullet > li {
+  position: relative;
+  margin-bottom: 4px;
+  padding-left: 18px;
+}
+.sub.policy .policy-area .list-bullet > li:last-child {margin-bottom: 0;}
+.sub.policy .policy-area .list-bullet > li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  top: 0;
+}
+.sub.policy .policy-area .list-bullet > li strong {
+  font-family: 'Pretendard-SemiBold';
+  font-weight: normal;
+}
+.sub.policy .policy-area .policy-addendum {
+  margin-bottom: 0;
+  padding: 20px 28px;
+  border-radius: 8px;
+  background-color: rgba(var(--c-sub-rgb),.04);
+}
+.sub.policy .policy-area .policy-addendum h4 {
+  margin: 0 0 10px 0;
+  font-family: 'Pretendard-Bold';
+}
+
+
 /* 미디어쿼리 */
 /* 추가 */
 @media (max-height: 480px) {
@@ -3426,4 +3521,31 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
     left: auto;
     border-radius: 10px;
   }
+  
+  /* -- 정책 페이지 -- */
+  /* 이용약관/개인정보처리방침 */
+  .wrap.sub.policy .sub-content-area.intro {padding-bottom: 40px;}
+  .sub.policy .policy-area {
+    max-width: 100%;
+    margin-top: 8px;
+    padding-bottom: 25px;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .sub.policy .policy-area .policy-header {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+  .sub.policy .policy-area .policy-header h2 {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+  }
+  .sub.policy .policy-area .policy-section {margin-bottom: 28px;}
+  .sub.policy .policy-area .policy-section h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+  }
+  .sub.policy .policy-area .policy-article {margin-bottom: 20px;}
+  .sub.policy .policy-area .policy-article h4 {font-size: 17px;}
+  .sub.policy .policy-area .policy-addendum {margin-bottom: 0;}
 }
