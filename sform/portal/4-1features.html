@@ -28,34 +28,30 @@
             });
         });
 
-
+        // 주요 기능 이미지 애니메이션
         $(function () {
-    const $featureItems = $('.sub.features .features-list ul li');
+            const $featureItems = $('.sub.features .features-list ul li');
+            function checkScroll() {
+                const windowBottom = $(window).scrollTop() + $(window).height();
+                $featureItems.each(function () {
+                    const $this = $(this);
 
-    function checkScroll() {
-        const windowBottom = $(window).scrollTop() + $(window).height();
+                    if ($this.hasClass('is-active')) {
+                        return;
+                    }
 
-        $featureItems.each(function () {
-            const $this = $(this);
+                    const itemTop = $this.offset().top;
+                    const triggerOffset = 150;
 
-            // 이미 활성화된 요소는 건너뜀
-            if ($this.hasClass('is-active')) {
-                return;
+                    if (windowBottom > itemTop + triggerOffset) {
+                        $this.addClass('is-active');
+                    }
+                });
             }
 
-            const itemTop = $this.offset().top;
-            const triggerOffset = 150; // 화면 하단에서 150px 올라왔을 때 실행 (수치 조절 가능)
-
-            if (windowBottom > itemTop + triggerOffset) {
-                $this.addClass('is-active');
-            }
+            $(window).on('scroll', checkScroll);
+            checkScroll();
         });
-    }
-
-    // 스크롤 시 및 초기 페이지 로드 시 실행
-    $(window).on('scroll', checkScroll);
-    checkScroll();
-});
     </script>
 </head>
 <body>
