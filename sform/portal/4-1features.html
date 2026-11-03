@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="Sform - 전자문서 통합 플랫폼">
+    <meta name="author" content="">
+    <title>Sform - 전자문서 통합 플랫폼</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"/>
+    <!-- css -->
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/sform-portal.css">
+    <!-- js -->
+    <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script>
+        // header 스크롤
+        $(window).on('scroll', function () {
+            $('header').toggleClass('scrolled', $(this).scrollTop() > 0);
+        }).trigger('scroll');
+
+        // nav 모바일
+        $(function() {
+            $('.nav-mob').on('click', function() {
+                $('header').toggleClass('is-open');
+                $('body').css('overflow', $('header').hasClass('is-open') ? 'hidden' : '');
+            });
+        });
+
+
+        $(function () {
+    const $featureItems = $('.sub.features .features-list ul li');
+
+    function checkScroll() {
+        const windowBottom = $(window).scrollTop() + $(window).height();
+
+        $featureItems.each(function () {
+            const $this = $(this);
+
+            // 이미 활성화된 요소는 건너뜀
+            if ($this.hasClass('is-active')) {
+                return;
+            }
+
+            const itemTop = $this.offset().top;
+            const triggerOffset = 150; // 화면 하단에서 150px 올라왔을 때 실행 (수치 조절 가능)
+
+            if (windowBottom > itemTop + triggerOffset) {
+                $this.addClass('is-active');
+            }
+        });
+    }
+
+    // 스크롤 시 및 초기 페이지 로드 시 실행
+    $(window).on('scroll', checkScroll);
+    checkScroll();
+});
+    </script>
+</head>
+<body>
+<div class="wrap sub features">
+    <header>
+        <div class="header-in">
+            <div class="logo-area">
+                <a href=""><img src="./images/logo-sform.svg" alt="에스폼 로고"/></a>
+            </div>
+            <nav>
+                <div class="nav-mob">
+                    <span class="ico-nav-menu"></span>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="">주요기능</a></li>
+                        <li><a href="">이용방식</a></li>
+                        <li><a href="">서명수단</a></li>
+                        <li><a href="">주요고객</a></li>
+                        <li><a href="">가맹계약</a></li>
+                    </ul>
+                </div>
+                <ul class="nav-link">
+                    <li><a href="" class="btn-login">로그인</a></li>
+                    <li><a href="" class="btn-start">도입문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 인트로 -->
+    <section class="sub-content-area intro full">
+        <div class="sub-content-area-in title-area">
+            <div class="title-area-inner">
+                <div class="t-box">주요기능</div>
+                <h1>계약을 넘어, <span class="point">모든 문서</span>를 전자문서로</h1>
+                <div class="desc-area">
+                    <p>Sform은 전자계약뿐 아니라 서식 작성부터 서명·결재·대량 전송·문서 관리까지,</p>
+                    <p>기업의 모든 문서 업무를 하나의 플랫폼에서 지원합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 주요기능 -->
+    <section class="sub-content-area features-list">
+        <div class="sec-intro">
+            <h2>계약을 넘어, 모든 문서에 대해 전자문서 지원</h2>
+            <p>계약서는 물론 동의서·신청서·내부 결재 문서·각종 서식까지, 문서의 종류를 가리지 않고 작성·서명·보관의 전 과정을 전자문서로 처리할 수 있습니다.</p>
+        </div>
+        <ul>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">계약 서식</span>
+                    <h3>모든 계약 서식 전자계약 지원</h3>
+                    <p>
+                        <span>표준 및 비표준 계약서를 포함한 모든 계약 서식에 대해</span>
+                        <span>전자계약을 지원합니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature01.png" alt="모든 계약 서식 전자계약 지원"/>
+                    <img class="float-img" src="./images/feature01-float.png" alt="모든 계약 서식 전자계약 지원"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">전자서명</span>
+                    <h3>다양한 전자서명 방식 제공</h3>
+                    <p>
+                        <span>계약 체결 유형에 따라 다양한 전자서명 방식(간편서명, 공동인증서)을</span>
+                        <span>선택하여 이용할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature02.png" alt="다양한 전자서명 방식 제공"/>
+                    <img class="float-img" src="./images/feature02-float.png" alt="다양한 전자서명 방식 제공"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">작성 편의</span>
+                    <h3>입력항목 자동계산 기능 지원</h3>
+                    <p>
+                        <span>계약서 작성 시 한 항목을 입력하면 다른 항목이 자동으로</span>
+                        <span>계산되어 입력됩니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature03.png" alt="입력항목 자동계산 기능 지원"/>
+                    <img class="float-img" src="./images/feature03-float.png" alt="입력항목 자동계산 기능 지원"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">작성 편의</span>
+                    <h3>서식 내 유연한 입력항목 관리</h3>
+                    <p>
+                        <span>계약 서식 내 입력항목을 유연하게 추가하거나 삭제하여 계약서를</span>
+                        <span>작성할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature04.png" alt="서식 내 유연한 입력항목 관리"/>
+                    <img class="float-img" src="./images/feature04-float.png" alt="서식 내 유연한 입력항목 관리"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">문서 관리</span>
+                    <h3>구비서류 및 일반서류 통합관리</h3>
+                    <p>
+                        <span>구비서류(보증보험증권, 수입인지 등)와 일반서류(사업자등록증,</span>
+                        <span>통장사본 등)를 효율적으로 관리 가능합니다.</span>
+                    </p>
+                    <p>
+                        <span>흩어져 있는 계약 관련 서류들을 한 곳에 모아 편리하게 관리하고</span>
+                        <span>검색할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature05.png" alt="구비서류 및 일반서류 통합관리"/>
+                    <img class="float-img" src="./images/feature05-float.png" alt="구비서류 및 일반서류 통합관리"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">결재 · 승인</span>
+                    <h3>계약서 발송 전 내부 결재 진행</h3>
+                    <p>
+                        <span>계약서 발송 전에 작성된 계약서에 대해 전자결재를 통해 내부</span>
+                        <span>승인 절차를 진행할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature06.png" alt="계약서 발송 전 내부 결재 진행"/>
+                    <img class="float-img" src="./images/feature06-float.png" alt="계약서 발송 전 내부 결재 진행"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">대량 처리</span>
+                    <h3>계약서 대량 전송</h3>
+                    <p>
+                        <span>동일한 양식의 계약서를 다수의 거래처에, 동시에 대량으로</span>
+                        <span>전송할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature07.png" alt="계약서 대량 전송"/>
+                    <img class="float-img" src="./images/feature07-float.png" alt="계약서 대량 전송"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">권한 · 조직</span>
+                    <h3>사용자별 권한 관리</h3>
+                    <p>
+                        <span>회사 상황에 맞게 부서를 관리하고, 사용자의 역할 및 업무 권한을</span>
+                        <span>부여하여 계약을 진행할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature08.png" alt="사용자별 권한 관리"/>
+                    <img class="float-img" src="./images/feature08-float.png" alt="사용자별 권한 관리"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">전자서명</span>
+                    <h3>간편 서명 도장 관리</h3>
+                    <p>
+                        <span>필요한 도장을 간편하게 제작하거나 실물 도장 이미지를</span>
+                        <span>업로드하여 서명을 진행합니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature09.png" alt="간편 서명 도장 관리"/>
+                    <img class="float-img" src="./images/feature09-float.png" alt="간편 서명 도장 관리"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">전자서명</span>
+                    <h3>대면 전자서명</h3>
+                    <p>
+                        <span>대면 계약 시, 당사자 간 협의 후 현장에서 한 화면을 보며</span>
+                        <span>전자서명을 진행할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature10.png" alt="대면 전자서명"/>
+                    <img class="float-img" src="./images/feature10-float.png" alt="대면 전자서명"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">문서 관리</span>
+                    <h3>외부 계약서 관리</h3>
+                    <p>
+                        <span>외부에서 진행된 종이 계약서 및 기타 전자계약 PDF 파일을</span>
+                        <span>등록하여 관리할 수 있습니다.</span>
+                    </p>
+                    <p>
+                        <span>외부 계약서 통합 관리로 계약 정보 활용도를 높입니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature11.png" alt="외부 계약서 관리"/>
+                    <img class="float-img" src="./images/feature11-float.png" alt="외부 계약서 관리"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">연동 · 통합</span>
+                    <h3>API 연동을 통한 계약 진행</h3>
+                    <p>
+                        <span>고객사의 내부 업무 시스템과 API 연동을 통해 전자계약 업무를</span>
+                        <span>쉽고 빠르게 통합할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature12.png" alt="API 연동을 통한 계약 진행"/>
+                    <img class="float-img" src="./images/feature12-float.png" alt="API 연동을 통한 계약 진행"/>
+                </div>
+            </li>
+            <li>
+                <div class="cont-area">
+                    <span class="li-badge">계약 검증</span>
+                    <h3>간편 서명 계약에 대한 위변조 확인</h3>
+                    <p>
+                        <span>간편 서명 방식으로 진행된 전자문서에 대해 다양한 수단으로</span>
+                        <span>본인 확인 및 계약의 진위확인 / 위변조 여부를 검증할 수 있습니다.</span>
+                    </p>
+                </div>
+                <div class="img-area">
+                    <img class="bg-img" src="./images/feature13.png" alt="간편 서명 계약에 대한 위변조 확인"/>
+                    <img class="float-img" src="./images/feature13-float.png" alt="간편 서명 계약에 대한 위변조 확인"/>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- 도입문의 -->
+    <section class="sub-content-area full cta-sec">
+        <div class="sec-head light">
+          <h2>어떤 방식이 적합한지 궁금하신가요?</h2>
+          <p>데이터 보관과 내부 업무 시스템 연동 기준으로 최적의 도입 방식을 함께 설계해 드립니다.</p>
+        </div>
+        <div class="btn-area">
+            <a href="" class="btn-m bg ico"><span class="dot"></span>도입 문의하기</a>
+            <a href="" class="btn-m line">무료 체험 시작</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-in">
+            <ul class="link-area">
+                <li><a href="">이용약관</a></li>
+                <li><a class="point" href="">개인정보처리방침</a></li>
+            </ul>
+            <ul class="info-area">
+                <li class="comp-name">주식회사 유니포스트</li>
+                <li><span>주소 : 서울시 강남구 강남대로 574, 5층 (전기공사공제조합회관)</span><span>대표 : 김계원</span></li>
+                <li><span>사업자등록번호 : 104-86-21562</span><span>통신판매번호 : 2020-서울강남-00515</span></li>
+                <li>ⓒUNIPOST. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
