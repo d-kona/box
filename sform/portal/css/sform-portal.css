@@ -2473,7 +2473,7 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 /* -- 정책 페이지 -- */
 /* 이용약관/개인정보처리방침 */
 .wrap.sub.policy .sub-content-area strong {
-  font-family: 'Pretendard-Bold';
+  font-family: 'Pretendard-SemiBold';
   font-weight: normal;
 }
 .wrap.sub.policy .sub-content-area.intro {
@@ -2614,6 +2614,11 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   font-weight: normal;
   color: #222;
   background-color: rgba(var(--c-sub-rgb),.02);
+}
+.wrap.policy .sub-content-area .policy-area .policy-table td {
+  text-align: left;
+  vertical-align: middle;
+  font-family: 'Pretendard-normal';
 }
 .wrap.policy .sub-content-area .policy-area .policy-table .text-center {text-align: center;}
 .wrap.policy .sub-content-area .policy-area .policy-table .text-muted {color: #aaa;}
