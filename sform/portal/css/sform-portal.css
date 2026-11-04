@@ -16,6 +16,7 @@
   --c-accent-r: 255;
   --c-accent-g: 107;
   --c-accent-b: 53;
+  --shadow: 0 12px 50px -25px rgba(27,42,99,.08);
 }
 
 
@@ -2489,6 +2490,12 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   word-break: keep-all;
   font-size: 17px;
   border-bottom: 2px solid #222;
+
+  /* padding: 48px;
+  background-color: #fff;
+  border-radius: 28px;
+  box-sizing: border-box;
+  box-shadow: var(--shadow); */
 }
 .sub.policy .policy-area .policy-header {
   margin-bottom: 35px;
