@@ -2472,7 +2472,14 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 
 /* -- 정책 페이지 -- */
 /* 이용약관/개인정보처리방침 */
-.wrap.sub.policy .sub-content-area.intro {padding-bottom: 100px;}
+.wrap.sub.policy .sub-content-area strong {
+  font-family: 'Pretendard-Bold';
+  font-weight: normal;
+}
+.wrap.sub.policy .sub-content-area.intro {
+  padding-bottom: 100px;
+  background: linear-gradient(to top, rgba(195,215,255,.6) 0%, rgba(255,255,255,.8) 50%, rgba(223,247,255,.8) 100%);  
+}
 .sub.policy .policy-area {
   max-width: 1000px;
   margin: 68px auto 0;
@@ -2491,7 +2498,7 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
 .sub.policy .policy-area .policy-header h2 {
   margin: 0 0 8px 0;
   font-family: 'Pretendard-Bold';
-  font-size: 28px;
+  font-size: 20px;
 }
 .sub.policy .policy-area .policy-header .policy-effective-date {
   margin: 0;
@@ -2563,6 +2570,61 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   margin: 0 0 10px 0;
   font-family: 'Pretendard-Bold';
 }
+/* 개인정보처리방침 */
+.sub.policy.privacy .policy-area .policy-section h3 {font-size: 21px;}
+.wrap.policy .policy-area .policy-intro {
+  margin: 0 0 25px 0;
+  font-family: 'Pretendard-SemiBold';
+}
+.wrap.policy .policy-area .policy-article-desc {margin: 0 0 12px 0;}
+.wrap.policy .policy-area .style-mt {margin-top: 15px;}
+.wrap.policy .policy-area .table-responsive {
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+.wrap.policy .sub-content-area .policy-area .policy-table {
+  width: 100%;
+  min-width: 600px;
+  text-align: left;
+  border-top: 1px solid rgba(var(--c-sub-rgb),1);
+  border-collapse: collapse;
+  background-color: transparent;
+}
+.wrap.policy .sub-content-area .policy-area .policy-table thead {height: auto;}
+.wrap.policy .sub-content-area .policy-area .policy-table th,
+.wrap.policy .sub-content-area .policy-area .policy-table td {
+  padding: 12px 16px;
+  line-height: 26px;
+  font-size: 17px;
+  border-top: none;
+  border-bottom: 1px solid rgba(var(--c-sub-rgb),.1);
+  border-right: 1px solid rgba(var(--c-sub-rgb),.04);
+  border-left: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+.wrap.policy .sub-content-area .policy-area .policy-table th:last-child,
+.wrap.policy .sub-content-area .policy-area .policy-table td:last-child {
+  border-right: none;
+}
+.wrap.policy .sub-content-area .policy-area .policy-table th {
+  font-family: 'Pretendard-SemiBold';
+  font-weight: normal;
+  color: #222;
+  background-color: rgba(var(--c-sub-rgb),.02);
+}
+.wrap.policy .sub-content-area .policy-area .policy-table .text-center {text-align: center;}
+.wrap.policy .sub-content-area .policy-area .policy-table .text-muted {color: #aaa;}
+
+.wrap.policy .sub-content-area .policy-area .table-responsive::-webkit-scrollbar {height: 6px;}
+.wrap.policy .sub-content-area .policy-area .table-responsive::-webkit-scrollbar-track {background: #fff;}
+.wrap.policy .sub-content-area .policy-area .table-responsive::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #b6ceff;
+}
+.wrap.policy .sub-content-area .policy-area .table-responsive::-webkit-scrollbar-thumb:hover {background: #b6ceff;}
 
 
 /* 미디어쿼리 */
@@ -3219,7 +3281,7 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   .wrap.sub .sub-content-area .title-area h1 {
     margin: 12px 0 20px;
     line-height: 42px;
-    font-size: 32px;
+    font-size: 30px;
   }
   .wrap.sub .sub-content-area .title-head h2 {
     font-size: 30px;
@@ -3538,11 +3600,13 @@ html:has(.wrap.contact-page) {background-color: rgba(var(--c-sub-rgb),1);}
   }
   .sub.policy .policy-area .policy-header h2 {
     margin: 0 0 4px 0;
-    font-size: 22px;
+    font-size: 17px;
   }
   .sub.policy .policy-area .policy-section {margin-bottom: 28px;}
-  .sub.policy .policy-area .policy-section h3 {
-    margin: 0 0 16px 0;
+  .sub.policy .policy-area .policy-section h3,
+  .sub.policy.privacy .policy-area .policy-section h3{
+    margin: 0 0 12px 0;
+    line-height: 28px;
     font-size: 20px;
   }
   .sub.policy .policy-area .policy-article {margin-bottom: 20px;}
